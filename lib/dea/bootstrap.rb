@@ -542,13 +542,13 @@ module Dea
       delay = 0.0
 
       # Penalize for instances of the same app
-      instances = instance_registry.instances_for_application(app_id)
-      delay += (instances.size * DISCOVER_DELAY_MS_PER_INSTANCE)
+      #instances = instance_registry.instances_for_application(app_id)
+      #delay += (instances.size * DISCOVER_DELAY_MS_PER_INSTANCE)
 
       # Penalize for mem usage
-      delay += (resource_manager.reserved_memory / resource_manager.memory_capacity.to_f) * DISCOVER_DELAY_MS_MEM
+      #delay += (resource_manager.reserved_memory / resource_manager.memory_capacity.to_f) * DISCOVER_DELAY_MS_MEM
 
-      [delay, DISCOVER_DELAY_MS_MAX].min.to_f / 1000
+      #[delay, DISCOVER_DELAY_MS_MAX].min.to_f / 1000
     end
 
     def handle_dea_update(message)
